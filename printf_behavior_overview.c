@@ -101,7 +101,7 @@ int	main(void)
 	printf("conversion s precision * flag 0 with optional number with nl : %010.*s\n", s);
 	printf("conversion p precision * flag 0 with optional number with nl : %010.*p\n", (void*)s); 
 
-	printf("conversion i precision u flag - with * with nl : %-*.3i\n", i);
+	printf("conversion i precision 3 flag - with * with nl : %-*.3i\n", i);
 	printf("conversion d precision 4 flag - with * with nl : %-*.4d\n", i);
 	printf("conversion u precision 5 flag - with * with nl : %-*.5u\n", i);
 	printf("conversion x precision 6 flag - with * with nl : %-*.6x\n", i);
