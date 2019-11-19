@@ -26,4 +26,60 @@ int	main(void)
 	
 	/* for diuxX conversions, works like '0' flag */
 	/* for s conversion, print only x characters of value */
+
+	/* d conversion : */
+
+	printf("%.10d\n", i);
+	printf("%.1d\n", i);
+	printf("%.2d\n", i);
+	printf("%.3d\n", i);
+	printf("%.4d\n", i);
+
+	/* u conversion : */
+
+	printf("%.10u\n", i);
+	printf("%.1u\n", i);
+	printf("%.2u\n", i);
+	printf("%.3u\n", i);
+	printf("%.4u\n", i);
+
+	/* x conversion : */
+
+	printf("%.x\n", i);
+	printf("%.00x\n", i);
+	printf("%.10x\n", i);
+	printf("%.1x\n", i);
+	printf("%.2x\n", i);
+	printf("%.3x\n", i);
+	printf("%.4x\n", i);
+
+	/* X conversion : */
+
+	printf("%.10x\n", i);
+	printf("%.1x\n", i);
+	printf("%.2x\n", i);
+	printf("%.3x\n", i);
+	printf("%.4x\n", i);
+
+	/* Meme resultats jusque la */	
+
+	/* c conversion : warning */
+	/* precision used with 'c' conversion specifier, resulting in undefined behavior */
+	/* "*" a tout les tests */
+	printf("%.0c\n", i);
+	printf("%.10c\n", i);
+	printf("%.1c\n", i);
+	printf("%.2c\n", i);
+	printf("%.3c\n", i);
+	printf("%.4c\n", i);
+
+	/* p conversion : warning :*/
+	/* precision used with 'p' conversion specifier, resulting in undefined behavior */
+	printf("%.p\n", s);   /* "0x1034b9ec6" */
+	printf("%.10p\n", s); /* "0x01034b9ec6" */
+	printf("%.11p\n", s); /* "0x001034b9ec6" */
+	printf("%.12p\n", s); /* "0x0001034b9ec6" */
+	printf("%.13p\n", s); /* "0x00001034b9ec6" */
+	printf("%.14p\n", s); /* "0x000001034b9ec6" */
+	/* 0x then address(number) is proccessed. print (x -strlen(address after '0x')) zeros to the left of the address */
 }

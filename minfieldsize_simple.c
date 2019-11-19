@@ -22,4 +22,54 @@ int	main(void)
 	printf("%6s\n", s); /* " hello" */
 
 	/* print (x - strlen(value)) spaces to the left of the value */
+
+	/* d conversion : */
+
+	printf("%10d\n", i);
+	printf("%1d\n", i);
+	printf("%2d\n", i);
+	printf("%3d\n", i);
+	printf("%4d\n", i);
+
+	/* u conversion : */
+
+	printf("%10u\n", i);
+	printf("%1u\n", i);
+	printf("%2u\n", i);
+	printf("%3u\n", i);
+	printf("%4u\n", i);
+
+	/* x conversion : */
+
+	printf("%10x\n", i);
+	printf("%1x\n", i);
+	printf("%2x\n", i);
+	printf("%3x\n", i);
+	printf("%4x\n", i);
+
+	/* X conversion : */
+
+	printf("%10x\n", i);
+	printf("%1x\n", i);
+	printf("%2x\n", i);
+	printf("%3x\n", i);
+	printf("%4x\n", i);
+
+	/* c conversion : */
+
+	printf("%10c\n", i);
+	printf("%1c\n", i);
+	printf("%2c\n", i);
+	printf("%3c\n", i);
+	printf("%4c\n", i);
+
+	/* p conversion : */
+
+	printf("%10p\n", s);
+	printf("%11p\n", s);
+	printf("%12p\n", s);
+	printf("%13p\n", s);
+	printf("%14p\n", s);
+
+	/* Meme resultat partout */
 }
