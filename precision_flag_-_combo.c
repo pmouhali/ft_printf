@@ -13,7 +13,7 @@ int	main(void)
 	printf("%-5.3i\n", i); /* "042  " */
 	printf("%-13.10i\n", i); /* "0000000042   " */
 	
-	/* conversion numeriques : (x - strlen(value with prec)) spaces left */
+	/* conversion numeriques : (x - strlen(value with prec)) spaces right */
 
 	printf("%-.s\n", s); /* "" */
 	printf("%-1.s\n", s); /* " " */
@@ -21,7 +21,7 @@ int	main(void)
 	printf("%-3.3s\n", s); /* "he " */
 	printf("%-3.10s\n", s); /* "he " */
 	
-	/* conversion s : (x - (value with prec)) spaces left */
+	/* conversion s : (x - (value with prec)) spaces right */
 
 	/* d conversion : */
 
