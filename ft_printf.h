@@ -6,7 +6,7 @@
 /*   By: pmouhali <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/21 12:12:22 by pmouhali          #+#    #+#             */
-/*   Updated: 2019/11/22 18:03:26 by pmouhali         ###   ########.fr       */
+/*   Updated: 2019/11/22 18:10:27 by pmouhali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,13 @@
 # include <unistd.h>
 
 # define A_FLAGS "0-.*"
+
+typedef struct	s_format
+{
+	int flags;
+	int precision;
+	int field_width;
+}		t_format;
 
 int	ft_printf(const char *f, ...);
 char	*format_string(const char *f, va_list l);

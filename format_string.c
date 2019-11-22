@@ -6,7 +6,7 @@
 /*   By: pmouhali <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/21 12:14:05 by pmouhali          #+#    #+#             */
-/*   Updated: 2019/11/22 17:31:45 by pmouhali         ###   ########.fr       */
+/*   Updated: 2019/11/22 18:10:53 by pmouhali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ char	*format_string(const char *f, va_list l)
 {
 	int i;
 	int j;
-	s_format fmt;
+	t_format fmt;
 	char *str = NULL;
 
 	i = 0;
