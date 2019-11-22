@@ -5,6 +5,9 @@ int	main(void)
 	unsigned int u = 42;
 	int i = 42;
 
+	printf("");
+
+/*
 	printf("%u\n", u);
 	printf("%u\n", i);
 
@@ -55,4 +58,5 @@ int	main(void)
 	printf("test %%%*.*itest%s\n",10, 3 , 42, "hello");
 	printf("test %%%0*.*itest%s\n", 10, 3, 42, "hello");
 	printf("test %%%-*.*itest%s\n", 10, 3, 42, "hello");
+*/
 }

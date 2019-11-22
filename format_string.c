@@ -6,7 +6,7 @@
 /*   By: pmouhali <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/21 12:14:05 by pmouhali          #+#    #+#             */
-/*   Updated: 2019/11/21 18:09:52 by pmouhali         ###   ########.fr       */
+/*   Updated: 2019/11/22 17:31:45 by pmouhali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,14 +26,17 @@ char	*format_string(const char *f, va_list l)
 		if (f[j] == '%')
 		{
 			str = ft_strjoin(str, ft_strndup(&f[i], j - i));
-			j += format_set(f, l, &fmt);
+			i = j;
+			j += format_set(&f[j], l, &fmt);
 			if (f[j] == conversion)
+			{
 				str = ft_strjoin(str, format_arg(f[j], l, fmt));
-			else
-				str = ft_strjoin(str, ft_strndup(&f[j], j - i));
-			i = j + 1;
+				i = j + 1;
+			}
 		}
 		j++;
 	}
+	if (f[i] != '\0') 
+		str = ft_strjoin(str, ft_strndup(&f[i], j - i));
 	return (str);
 }
