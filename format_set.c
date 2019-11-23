@@ -6,7 +6,7 @@
 /*   By: pmouhali <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/22 17:45:09 by pmouhali          #+#    #+#             */
-/*   Updated: 2019/11/22 18:10:58 by pmouhali         ###   ########.fr       */
+/*   Updated: 2019/11/23 14:00:26 by pmouhali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,14 @@
 int	format_set(const char *f, va_list l, t_format *fmt)
 {
 	unsigned int i;
+	int index;
 
 	i = 1;
-	while (ft_index(A_FLAGS, f[i]) != -1 || ft_isdigit(f[i]))
+	g_format_set_functions[FSET_INIT_INDEX](&fmt, l);
+	while ((index = ft_index(A_FLAGS, f[i])) != -1 || ft_isdigit(f[i]))
+	{
+		g_format_set_functions[index](&fmt, l);
 		i++;
+	}
 	return (i);
 } 

@@ -6,7 +6,7 @@
 /*   By: pmouhali <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/21 12:12:22 by pmouhali          #+#    #+#             */
-/*   Updated: 2019/11/22 18:10:27 by pmouhali         ###   ########.fr       */
+/*   Updated: 2019/11/23 13:59:23 by pmouhali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,5 +36,17 @@ int	ft_strlen(const char *s);
 void	ft_putstr(const char *s);
 int     ft_index(char const *s, char c);
 int	ft_isdigit(int c);
+
+void    fset_init(t_format **format, va_list l);
+//void    fset_0(t_format **format, va_list l);
+//void    fset_less(t_format **format, va_list l);
+//void    fset_precision(t_format **format, va_list l);
+//void    fset_field_width(t_format **format, va_list l);
+
+typedef void	(*t_format_set_function)(t_format **fmt, va_list l);
+
+# define FSET_INIT_INDEX 0
+
+t_format_set_function g_format_set_functions[1] = {&fset_init};
 
 #endif
