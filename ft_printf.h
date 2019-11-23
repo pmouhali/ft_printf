@@ -6,7 +6,7 @@
 /*   By: pmouhali <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/21 12:12:22 by pmouhali          #+#    #+#             */
-/*   Updated: 2019/11/23 15:59:56 by pmouhali         ###   ########.fr       */
+/*   Updated: 2019/11/23 16:24:57 by pmouhali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,7 @@ int	ft_isdigit(int c);
 void    fset_init(t_format **format, const char *fs, va_list l);
 void    fset_field_width(t_format **format, const char *fs, va_list l);
 void    fset_zero(t_format **format, const char *fs, va_list l);
+void    fset_less(t_format **format, const char *fs, va_list l);
 void    fset_precision(t_format **format, const char *fs, va_list l);
 
 typedef void	(*t_format_set_function)(t_format **fmt, const char *fs, va_list l);
