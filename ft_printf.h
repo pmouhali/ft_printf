@@ -6,7 +6,7 @@
 /*   By: pmouhali <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/21 12:12:22 by pmouhali          #+#    #+#             */
-/*   Updated: 2019/11/23 13:59:23 by pmouhali         ###   ########.fr       */
+/*   Updated: 2019/11/23 14:43:15 by pmouhali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,9 @@
 # include <stdlib.h>
 # include <unistd.h>
 
-# define A_FLAGS "0-.*"
+# define FLAGS "0-.*"
+# define F_ZERO 1
+# define F_LESS 2
 
 typedef struct	s_format
 {
@@ -44,9 +46,5 @@ void    fset_init(t_format **format, va_list l);
 //void    fset_field_width(t_format **format, va_list l);
 
 typedef void	(*t_format_set_function)(t_format **fmt, va_list l);
-
-# define FSET_INIT_INDEX 0
-
-t_format_set_function g_format_set_functions[1] = {&fset_init};
 
 #endif
