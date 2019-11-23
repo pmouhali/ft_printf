@@ -6,15 +6,16 @@
 /*   By: pmouhali <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/23 13:37:34 by pmouhali          #+#    #+#             */
-/*   Updated: 2019/11/23 13:56:32 by pmouhali         ###   ########.fr       */
+/*   Updated: 2019/11/23 15:13:18 by pmouhali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	fset_init(t_format **format, va_list l)
+void	fset_init(t_format **format, const char *fs, va_list l)
 {
 	(void)l;
+	(void)fs;
 	if (!l)
 		return ;
 	(*format)->flags = 0;
@@ -23,6 +24,19 @@ void	fset_init(t_format **format, va_list l)
 }
 
 /*
+void	test(char *t, ...)
+{
+	t_format test;
+	t_format *ptest = &test;
+	char *caca = "pute";
+	va_list l;
+
+	va_start(l, t);
+	fset_init(&ptest, caca, l);
+	printf("%s\n", caca);
+	va_end(l);
+}
+
 int	main(void)
 {
 	t_format f;
@@ -34,11 +48,11 @@ int	main(void)
 	f.field_width = 666;
 
 	pf = &f;
-	fset_init(&pf);
-	g_format_set_functions[0](&pf, l);
+//	g_format_set_functions[0](&pf, "salope", l);
 
+	test("putesalope");
 	printf("flags %d\n", f.flags);
 	printf("precision %d\n", f.precision);
 	printf("field_width %d\n", f.field_width);
-}
 */
+}
