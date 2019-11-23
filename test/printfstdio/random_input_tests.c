@@ -5,9 +5,12 @@ int	main(void)
 	unsigned int u = 42;
 	int i = 42;
 
-	printf("");
+	printf("%0s\n", "chatte");
+	printf("%-s\n", "chatte");
 
 /*
+	printf("");
+
 	printf("%u\n", u);
 	printf("%u\n", i);
 
