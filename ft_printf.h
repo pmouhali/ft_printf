@@ -17,7 +17,9 @@
 # include <stdlib.h>
 # include <unistd.h>
 
+# define CONVERTERS "sdiuxXcp%"
 # define FLAGS "0-.*"
+
 # define F_ZERO 1
 # define F_LESS 2
 
@@ -35,13 +37,13 @@ int	ft_printf(const char *f, ...);
 char	*format_string(const char *f, va_list l);
 int	format_set(const char *f, va_list l, t_format *fmt);
 
-char	*ft_strdup(const char *s);
-char	*ft_strjoin(char const *s1, char const *s2);
-int	ft_strlen(const char *s);
+char	*ft_strndup(const char *s, unsigned int n);
+char	*ft_strjoin(char *s1, char *s2);
+int		ft_strlen(const char *s);
 void	ft_putstr(const char *s);
 int     ft_index(char const *s, char c);
-int	ft_isdigit(int c);
-int ft_atoi(const char *str);
+int		ft_isdigit(int c);
+int		ft_atoi(const char *str);
 
 void    fset_init(t_format **format, const char *fs, va_list l);
 void    fset_field_width(t_format **format, const char *fs, va_list l);

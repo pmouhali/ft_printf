@@ -28,7 +28,7 @@ char	*format_string(const char *f, va_list l)
 			str = ft_strjoin(str, ft_strndup(&f[i], j - i));
 			i = j;
 			j += format_set(&f[j], l, &fmt);
-			if (f[j] == conversion)
+			if (ft_index(CONVERTERS, f[j]) != -1)
 			{
 				str = ft_strjoin(str, format_arg(f[j], l, fmt));
 				i = j + 1;
