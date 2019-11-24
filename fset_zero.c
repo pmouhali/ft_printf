@@ -13,9 +13,13 @@
 
 #include "ft_printf.h"
 
-void    fset_zero(t_format **format, const char *fs, va_list l);
+void    fset_zero(t_format **format, const char *fs, va_list l)
 {
 	if (((*format)->flags & F_ZERO) || ((*format)->flags & F_LESS))
+		return ;
+	if ((*format)->precision != DEFAULT_PRECISION_VALUE)
+		return ;
+	if ((*format)->field_width != DEFAULT_PRECISION_VALUE)
 		return ;
 	(*format)->flags += F_ZERO;
 }

@@ -12,12 +12,16 @@
 
 #include "ft_printf.h"
 
-void    fset_precision(t_format **format, const char *fs, va_list l);
+void    fset_precision(t_format **format, const char *fs, va_list l)
 {
 	if ((*format)->precision != DEFAULT_PRECISION_VALUE )
 		return ;
 	if (fs[1] && fs[1] == '*')
+	{
 		(*format)->precision = va_arg(l, int);
+		if ((*format)->precision < 0)
+			(*format)->precision = 0;
+	}
 	else if (fs[1] && ft_isdigit(fs[1]))
 		(*format)->precision = ft_atoi(&fs[1]);
 	else

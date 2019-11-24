@@ -10,12 +10,13 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-
 #include "ft_printf.h"
 
-void    fset_less(t_format **format, const char *fs, va_list l);
+void    fset_less(t_format **format, const char *fs, va_list l)
 {
 	if ((*format)->flags & F_LESS)
+		return ;
+	if ((*format)->precision != DEFAULT_PRECISION_VALUE)
 		return ;
 	if ((*format)->flags & F_ZERO)
 		(*format)->flags -= F_ZERO;
