@@ -18,6 +18,23 @@ void	test(char *str, ...)
 
 int		main(void)
 {
+	test("%d");
+	test("%0d");
+	test("%-d");
+	test("%.d");
+	test("%06d");
+	test("%-6d");
+	test("%.6d");
+	test("%010.10d");
+	test("%010.0d");
+	test("%-10.0d");
+	test("%*.*d", 2, 4);
+	test("%*.*d", -2, -4);
+	test("%*.*d", 0, 0);
+	test("%0*.*d", 2, -4);
+	test("%-*.*d", 2, -4);
+	test("%0*.*d", -2, -4);
+	test("%-*.*d", -2, -4);
 
 /*
 	test("%10*.0*", 2, 4); // flags 0 precision 0 fw 10
@@ -30,14 +47,6 @@ int		main(void)
 	test("%******.10**", 2, -4); // flags 0 precision 10 fw 2
 	test("%-*.*10", -2, -4); // flags 2 precision 0 fw 2
 	test("", -2, -4); // flags 0 precision -1 fw -1
-	test("%d");
-	test("%0d");
-	test("%-d");
-	test("%.d");
-	test("%010.10d");
-	test("%010.0d");
-	test("%-10.0d");
-	test("%*.*d", 2, 4);
 	test("%", -2, -4);
 	test("%%", -2, -4);
 	test("%vvv", -2, -4);

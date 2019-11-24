@@ -54,5 +54,5 @@ int	main(void)
 	printf("flags %d\n", f.flags);
 	printf("precision %d\n", f.precision);
 	printf("field_width %d\n", f.field_width);
-*/
 }
+*/
