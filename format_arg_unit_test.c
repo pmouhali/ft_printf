@@ -1,7 +1,7 @@
 #include "ft_printf.h"
 #include <stdio.h>
 
-void	test(const char c, ...)
+void	test(int c, ...)
 {
 	t_format format;
 	va_list l;
@@ -31,7 +31,7 @@ int		main(void)
 	int i = 0;
 	while (i < 256)
 	{
-		test('c', i);
+		test(1, i);
 		i++;
 	}
 

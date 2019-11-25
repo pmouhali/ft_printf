@@ -27,16 +27,16 @@ int		print_string(const char *f, va_list l)
 	{
 		if (f[j] == '%')
 		{
-			r += super_putstr(&f[i], (j - i), FALSE, FALSE);
+			r += super_putstr((char*)&f[i], (j - i), FALSE, FALSE);
 			i = j;
 			j += format_set(&f[j], l, &fmt);
 			if ((x = ft_index(CONVERTERS, f[j])) != -1)
 			{
-				r += super_putstr(format_arg(x, l, fmt), -1, TRUE, (x == 1));
+				r += super_putstr(format_arg(x, l, fmt), -1, TRUE, x == 1);
 				i = j + 1;
 			}
 		}
 	}
-	r += super_putstr(&f[i], (j - i), FALSE, FALSE);
+	r += super_putstr((char*)&f[i], (j - i), FALSE, FALSE);
 	return (r);
 }

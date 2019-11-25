@@ -45,11 +45,12 @@ typedef char	*(*t_flags_function)(char *str);
 
 /* ft_printf arch functions */
 int		ft_printf(const char *f, ...);
-char	*format_string(const char *f, va_list l);
+int		print_string(const char *f, va_list l);
 int		format_set(const char *f, va_list l, t_format *fmt);
 char	*format_arg(int c, va_list l, t_format format);
 
 /* tools */
+int		super_putstr(char *s, int n, int free_s, int print_null);
 char	*ft_strdup(const char *s);
 char	*ft_strndup(const char *s, unsigned int n);
 char	*ft_strjoin(char *s1, char *s2);
@@ -79,7 +80,6 @@ char	*w_s_conv(va_list l);
 //char	*w_%_conv(va_list l);
 
 /* conversions functions */
-//char	*c_conv(int c);
 //char	*p_conv(void *p);
 //char	*d_conv(int i);
 //char	*i_conv(int i);
