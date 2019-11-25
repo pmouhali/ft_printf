@@ -32,7 +32,7 @@ int		print_string(const char *f, va_list l)
 			j += format_set(&f[j], l, &fmt);
 			if ((x = ft_index(CONVERTERS, f[j])) != -1)
 			{
-				r += super_putstr(format_arg(x, l, fmt), -1, TRUE, x == 1);
+				r += super_putstr(format_arg(x, l, fmt), -1, TRUE, x == 6);
 				i = j + 1;
 			}
 		}

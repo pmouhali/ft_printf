@@ -26,7 +26,7 @@ int	main(void)
 
 	printf("%u\n", c); /* 99 */
 	printf("%u\n", n); /* 3567587327 */
-	printf("%u\n", s); /* never the same, reads an address probalbly */
+//	printf("%u\n", s); /* never the same, reads an address probalbly */
 
 	/* Only warnings given, also for int min value */
 }

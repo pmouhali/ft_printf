@@ -18,6 +18,7 @@ int	main(void)
 	printf("%d\n", 1); /* same */
 	printf("%d\n", 9); /* same */
 	printf("%d\n", 10); /* same */
+
 	printf("%d\n", LONG_MIN - 2000); /* -2000 */
 	printf("%d\n", LONG_MAX + 2000); /* 1999 */
 	printf("%i\n", 1000000000000); /* -727379968 */

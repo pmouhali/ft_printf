@@ -1,4 +1,5 @@
 #include "ft_printf.h"
+#include "stdio.h"
 
 int		ft_printf(const char *f, ...)
 {
@@ -12,10 +13,26 @@ int		ft_printf(const char *f, ...)
 
 int		main(void)
 {
-	int i = 0;
-	while (i < 256)
-	{
-		ft_printf("%c\n", i);
-		i++;	
-	}
+	char *s = "test";
+
+	printf("s : %s, d:  %d, i : %i, u : %u, x : %x, X : %X, c : %c, p : %p, %% : %%\n", 
+		"la boulangerie", 
+		42, 
+		0,
+		15,
+		10,
+		10,
+		0,
+		s
+	);
+	ft_printf("s : %s, d:  %d, i : %i, u : %u, x : %x, X : %X, c : %c, p : %p, %% : %%\n", 
+		"la boulangerie", 
+		42, 
+		0,
+		15,
+		10,
+		10,
+		0,
+		s
+	);
 }
