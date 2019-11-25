@@ -17,7 +17,11 @@
 # include <stdlib.h>
 # include <unistd.h>
 
-# define CONVERTERS "sdiuxXcp%"
+# define TRUE 1
+# define FALSE 0
+
+//# define CONVERTERS "sdiuxXcp%"
+# define CONVERTERS "scdiuxXp%"
 # define FLAGS "0-.*"
 
 # define F_ZERO 1
@@ -35,17 +39,18 @@ typedef struct	s_format
 
 typedef void	(*t_format_set_function)(t_format **fmt, const char *fs, va_list l);
 
-typedef char	(*t_conversion_function)(va_list l);
+typedef char	*(*t_conversion_function)(va_list l);
 
-typedef char	(*t_flags_function)(char *str);
+typedef char	*(*t_flags_function)(char *str);
 
 /* ft_printf arch functions */
 int		ft_printf(const char *f, ...);
 char	*format_string(const char *f, va_list l);
 int		format_set(const char *f, va_list l, t_format *fmt);
-char	*format_arg(char c, va_list l, t_format format);
+char	*format_arg(int c, va_list l, t_format format);
 
 /* tools */
+char	*ft_strdup(const char *s);
 char	*ft_strndup(const char *s, unsigned int n);
 char	*ft_strjoin(char *s1, char *s2);
 int		ft_strlen(const char *s);
@@ -65,23 +70,21 @@ void    fset_precision(t_format **format, const char *fs, va_list l);
 /* conversions functions (wrappers) */
 char	*w_c_conv(va_list l);
 char	*w_s_conv(va_list l);
-char	*w_p_conv(va_list l);
-char	*w_d_conv(va_list l);
-char	*w_i_conv(va_list l);
-char	*w_u_conv(va_list l);
-char	*w_x_conv(va_list l);
-char	*w_X_conv(va_list l);
-char	*w_%_conv(va_list l);
+//char	*w_p_conv(va_list l);
+//char	*w_d_conv(va_list l);
+//char	*w_i_conv(va_list l);
+//char	*w_u_conv(va_list l);
+//char	*w_x_conv(va_list l);
+//char	*w_X_conv(va_list l);
+//char	*w_%_conv(va_list l);
 
 /* conversions functions */
-char	*c_conv(int c);
-char	*s_conv(char *s);
-char	*p_conv(void *p);
-char	*d_conv(int i);
-char	*i_conv(int i);
-char	*u_conv(int i);
-char	*x_conv(int i);
-char	*X_conv(int i);
-char	*%_conv(void);
+//char	*c_conv(int c);
+//char	*p_conv(void *p);
+//char	*d_conv(int i);
+//char	*i_conv(int i);
+//char	*u_conv(int i);
+//char	*x_conv(int i);
+//char	*X_conv(int i);
 
 #endif

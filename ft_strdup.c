@@ -1,35 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   format_string.c                                    :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pmouhali <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/21 12:14:05 by pmouhali          #+#    #+#             */
-/*   Updated: 2019/11/22 18:10:53 by pmouhali         ###   ########.fr       */
+/*   Created: 2019/11/04 15:02:19 by pmouhali          #+#    #+#             */
+/*   Updated: 2019/11/21 13:27:16 by pmouhali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-t_conversion_function	g_conversion_functions[] =
+char	*ft_strdup(const char *s)
 {
-	&w_s_conv, 
-	&w_c_conv,
-//	&w_d_conv,
-//	&w_i_conv,
-//	&w_u_conv,
-//	&w_x_conv,
-//	&w_X_conv,
-//	&w_p_conv,
-//	&w_%_conv
-};
-
-char	*format_arg(int c, va_list l, t_format format)
-{
-	char *s;
+	int		i;
+	char	*new;
 	
-	s = NULL;
-	s = g_conversion_functions[c](l);
-	return (s);
+	if (!s)
+		return (NULL);
+	i = 0;
+	while (s[i])
+		i++;
+	if ((new = (char*)malloc(sizeof(char) * (i + 1))) == NULL)
+		return (NULL);
+	i = 0;
+	while (s[i])
+	{
+		new[i] = s[i];
+		i++;
+	}
+	new[i] = '\0';
+	return (new);
 }

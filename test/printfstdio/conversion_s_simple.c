@@ -16,7 +16,7 @@ int	main(void)
 	int ii[] = {48, 49, 50};
 	char c = 'a';
 	
-	printf("%s\n", ii); /* 0 */ 
+//	printf("%s\n", ii); /* 0 */ 
 /*	printf("%s\n", i); segfault */ 
 /*	printf("%s\n", c); segfault */
 

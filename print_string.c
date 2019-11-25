@@ -12,24 +12,31 @@
 
 #include "ft_printf.h"
 
-t_conversion_function	g_conversion_functions[] =
+int		print_string(const char *f, va_list l)
 {
-	&w_s_conv, 
-	&w_c_conv,
-//	&w_d_conv,
-//	&w_i_conv,
-//	&w_u_conv,
-//	&w_x_conv,
-//	&w_X_conv,
-//	&w_p_conv,
-//	&w_%_conv
-};
+	int i;
+	int j;
+	int r;
+	int x;
+	t_format fmt;
 
-char	*format_arg(int c, va_list l, t_format format)
-{
-	char *s;
-	
-	s = NULL;
-	s = g_conversion_functions[c](l);
-	return (s);
+	i = 0;
+	j = -1;
+	r = 0;
+	while (f[++j])
+	{
+		if (f[j] == '%')
+		{
+			r += super_putstr(&f[i], (j - i), FALSE, FALSE);
+			i = j;
+			j += format_set(&f[j], l, &fmt);
+			if ((x = ft_index(CONVERTERS, f[j])) != -1)
+			{
+				r += super_putstr(format_arg(x, l, fmt), -1, TRUE, (x == 1));
+				i = j + 1;
+			}
+		}
+	}
+	r += super_putstr(&f[i], (j - i), FALSE, FALSE);
+	return (r);
 }
