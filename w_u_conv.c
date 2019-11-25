@@ -2,5 +2,5 @@
 
 char	*w_u_conv(va_list l)
 {
-	return (ft_itoa(va_arg(l, unsigned int)));
+	return (ft_utoa(va_arg(l, unsigned int)));
 }

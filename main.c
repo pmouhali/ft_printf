@@ -1,6 +1,6 @@
 #include "ft_printf.h"
 #include "stdio.h"
-
+/*
 int		ft_printf(const char *f, ...)
 {
 	va_list l;
@@ -36,3 +36,4 @@ int		main(void)
 		s
 	);
 }
+*/

@@ -59,6 +59,7 @@ int     ft_index(char const *s, char c);
 int		ft_isdigit(int c);
 int		ft_atoi(const char *str);
 char	*ft_itoa(int n);
+char	*ft_utoa(unsigned int n);
 char	*ft_dec_to_hex(unsigned int n, char *hex_charset);
 
 /* format set functions */
