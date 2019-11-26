@@ -20,12 +20,12 @@ int	main(void)
 	printf("%u\n", 1000000000000); /* 3567587328 */
 	printf("%u\n", -1000000000000); /* 727379968 */
 
-	char c = 'c';
-	long n = 999999999999;
-	char *s = "abc";
-
-	printf("%u\n", c); /* 99 */
-	printf("%u\n", n); /* 3567587327 */
+//	char c = 'c';
+//	long n = 999999999999;
+//	char *s = "abc";
+//
+//	printf("%u\n", c); /* 99 */
+//	printf("%u\n", n); /* 3567587327 */
 //	printf("%u\n", s); /* never the same, reads an address probalbly */
 
 	/* Only warnings given, also for int min value */
