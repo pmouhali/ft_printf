@@ -22,7 +22,7 @@ char		*ft_utoa(unsigned int n)
 
 		if (n == 0)
 			return (ft_strdup("0"));
-		i = ft_itoa_chrcnt(n);
+		i = ft_utoa_chrcnt(n);
 		if ((toa = (char*)malloc(sizeof(char) * (i + 1))) == NULL)
 				return (NULL);
 		toa[i] = '\0';
