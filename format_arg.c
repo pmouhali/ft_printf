@@ -25,16 +25,29 @@ t_conversion_function	g_conversion_functions[] =
 	&w_char37_conv
 };
 
-t_flag_function		g_flag_functions[] = {};
+t_flag_function		g_flag_functions[] = 
+{
+	&precision
+};
+
+int		flag_bmask_values[] =
+{
+	F_PRECISION, F_FIELD_WIDTH, F_ZERO, F_LESS
+};
 
 char	*format_arg(int c, va_list l, t_format format)
 {
-	(void)format;
 	char *s;
+	int i;
 	
 	s = NULL;
 	s = g_conversion_functions[c](l);
-	if (format.precision != DEFAULT_PRECISION_VALUE)
-		s = precision(c, s, format.precision);
+	i = 0;
+	while (i < FLAG_NUMBER)
+	{
+		if (format.flags & flag_bmask_values[i])
+			s = g_flag_functions[i](c, s, format);
+		i++;
+	}
 	return (s);
 }

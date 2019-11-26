@@ -49,11 +49,15 @@ static char	*n_precision(char *s, int p, int s_len)
 	return (new);
 }
 
-char	*precision(int c, char *s, int p)
+char	*precision(int c, char *s, t_format format)
 {
 	char	*new;
 	int len;
+	int p;
 
+	p = format.precision;
+	if (p == DEFAULT_PRECISION_VALUE)
+		return (s);
 	len = ft_strlen(s);
 	if (c == 0 && len > p)
 		new = s_precision(s, p);

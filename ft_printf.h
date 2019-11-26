@@ -23,8 +23,11 @@
 # define CONVERTERS "sdiuxXcp%"
 # define FLAGS "0-.*"
 
-# define F_ZERO 1
-# define F_LESS 2
+# define FLAG_NUMBER 1
+# define F_PRECISION 1
+# define F_FIELD_WIDTH 2
+# define F_ZERO 4
+# define F_LESS 8
 
 # define DEFAULT_FIELD_WIDTH_VALUE -1
 # define DEFAULT_PRECISION_VALUE -1
@@ -40,7 +43,7 @@ typedef void	(*t_format_set_function)(t_format **fmt, const char *fs, va_list l)
 
 typedef char	*(*t_conversion_function)(va_list l);
 
-typedef char	*(*t_flag_function)(char *str);
+typedef char	*(*t_flag_function)(int c, char *s, t_format format);
 
 /* ft_printf arch functions */
 int		ft_printf(const char *f, ...);
@@ -83,6 +86,6 @@ char	*w_xu_conv(va_list l);
 char	*w_char37_conv(va_list l);
 
 /* flag functions */
-char	*precision(int c, char *s, int p);
+char	*precision(int c, char *s, t_format format);
 
 #endif

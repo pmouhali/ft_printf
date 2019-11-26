@@ -16,6 +16,7 @@ void    fset_precision(t_format **format, const char *fs, va_list l)
 {
 	if ((*format)->precision != DEFAULT_PRECISION_VALUE )
 		return ;
+	(*format)->flags += F_PRECISION;
 	if (fs[1] && fs[1] == '*')
 	{
 		(*format)->precision = va_arg(l, int);

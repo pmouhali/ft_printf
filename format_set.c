@@ -30,7 +30,7 @@ int	format_set(const char *f, va_list l, t_format *fmt)
 		return (i);
 	while ((index = ft_index(FLAGS, f[i])) != -1 || ft_isdigit(f[i]))
 	{
-		if (index != -1)				
+		if (index != -1)
 			g_format_set_functions[index](&fmt, &f[i], l);
 		else
 			g_format_set_functions[3](&fmt, &f[i], l);

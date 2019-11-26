@@ -39,7 +39,7 @@ HEADER = ft_printf.h
 
 OBJS = $(SRCS:.c=.o)
 
-$(NAME): $(SRCS) $(OBJS)
+$(NAME): $(SRCS) $(OBJS) $(HEADER)
 		gcc $(FLAGS) -c $(SRCS) -I./ $(HEADER)
 		ar rc $(NAME) $(OBJS)
 		ranlib $(NAME)
