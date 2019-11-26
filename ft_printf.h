@@ -62,6 +62,7 @@ char	*ft_itoa(int n);
 char	*ft_utoa(unsigned int n);
 char	*ft_dec_to_hex(unsigned int n, char *hex_charset);
 char    *ft_get_address(long int n);
+void    *ft_memset(void *s, int c, size_t n);
 
 /* format set functions */
 void    fset_init(t_format **format, const char *fs, va_list l);
@@ -80,5 +81,8 @@ char	*w_u_conv(va_list l);
 char	*w_xl_conv(va_list l);
 char	*w_xu_conv(va_list l);
 char	*w_char37_conv(va_list l);
+
+/* flag functions */
+char	*precision(int c, char *s, int p);
 
 #endif

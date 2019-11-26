@@ -18,24 +18,25 @@ int		main(void)
 		printf("%.5s\n","");
 		printf("%.6s\n","");
 		printf("%.22s\n","");
-		printf("%.s\n", NULL);
+/*		printf("%.s\n", NULL);
 		printf("%.1s\n", NULL);
 		printf("%.2s\n", NULL);
 		printf("%.5s\n", NULL);
 		printf("%.6s\n", NULL);
-		printf("%.22s\n", NULL);
+		printf("%.22s\n", NULL); */
 
 		printf("d conversion\n");
-		printf("%.5d\n", -91329);
-		printf("%.6d\n", -91329);
-		printf("%.7d\n", -91329);
-		printf("%.1d\n", -1);
-		printf("%.d\n", 0);
-		printf("%.1d\n", 0);
-		printf("%.2d\n", 1);
-		printf("%.5d\n", 91329);
-		printf("%.6d\n", 91329);
-		printf("%.7d\n", 91329);
+		printf("[.5] %.5d\n", -91329);
+		printf("[.6] %.6d\n", -91329);
+		printf("[.7] %.7d\n", -91329);
+		printf("[.0] %.d\n", -1);
+		printf("[.1] %.1d\n", -1);
+		printf("[.] %.d\n", 0);
+		printf("[.1] %.1d\n", 0);
+		printf("[.2] %.2d\n", 1);
+		printf("[.5] %.5d\n", 91329);
+		printf("[.6] %.6d\n", 91329);
+		printf("[.7] %.7d\n", 91329);
 
 		printf("i conversion\n");
 		printf("%.5i\n", -91329);

@@ -20,6 +20,7 @@ SRCS = 		ft_printf.c \
 		w_u_conv.c \
 		w_xl_conv.c \
 		w_xu_conv.c \
+		precision.c \
 		super_putstr.c \
 		ft_atoi.c \
 		ft_itoa.c \
@@ -32,6 +33,7 @@ SRCS = 		ft_printf.c \
 		ft_strdup.c \
 		ft_strndup.c \
 		ft_strjoin.c \
+		ft_memset.c \
 		
 HEADER = ft_printf.h
 

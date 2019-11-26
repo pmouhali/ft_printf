@@ -25,28 +25,46 @@ static char	*s_precision(char *s, int p)
 static char	*n_precision(char *s, int p, int s_len)
 {
 	char *new;
-	unsigned int n_len;
+	char *abs;
+	int abs_len;
+	int n;
 	
-	n_len = s[0] == '-' ? s_len - 1 : s_len;
-	if (n_len < p)
-		
-	if ((new = (char*)malloc(sizeof(char) * (p + 1))) == NULL)
+	abs_len = s[0] == '-' ? s_len - 1 : s_len;
+	if (abs_len >= p)
 		return (s);
-	
+
+	n = abs_len == s_len ? 0 : 1;
+	abs = ft_strdup(&s[n]);
+
+	n = n == 0 ? p - abs_len : (p - abs_len) + 1;
+	if ((new = (char*)malloc(sizeof(char) * (n + 1))) == NULL)
+		return (s);
+	new[n] = '\0';
+	ft_memset(new, 48, n);
+	n = abs_len == s_len ? 0 : 1;
+	if (n == 1)
+		new[0] = '-';
+	new = ft_strjoin(new, abs);
+	free(s);
+	return (new);
 }
 
 char	*precision(int c, char *s, int p)
 {
 	char	*new;
-	unsigned int len;
+	int len;
 
 	len = ft_strlen(s);
 	if (c == 0 && len > p)
 		new = s_precision(s, p);
+	else if (c != 0 && s[0] == '0' && p == 0)
+	{
+		new = ft_strdup("");
+		free(s);
+	}	
+	else if (c != 0)
+		new = n_precision(s, p, len);
 	else
-		new = n_precision(s, p, len);		
+		new = s;
 	return (new);
 }
-
-// 123 4
-// 0123
