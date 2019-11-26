@@ -6,7 +6,7 @@
 /*   By: pmouhali <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/21 12:14:05 by pmouhali          #+#    #+#             */
-/*   Updated: 2019/11/26 12:19:08 by pmouhali         ###   ########.fr       */
+/*   Updated: 2019/11/26 14:49:10 by pmouhali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,8 @@ t_conversion_function	g_conversion_functions[] =
 	&w_char37_conv
 };
 
+t_flag_function		g_flag_functions[] = {};
+
 char	*format_arg(int c, va_list l, t_format format)
 {
 	(void)format;
@@ -32,5 +34,7 @@ char	*format_arg(int c, va_list l, t_format format)
 	
 	s = NULL;
 	s = g_conversion_functions[c](l);
+	if (format.precision != DEFAULT_PRECISION_VALUE)
+		s = precision(c, s, format.precision);
 	return (s);
 }

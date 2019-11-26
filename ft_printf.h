@@ -6,7 +6,7 @@
 /*   By: pmouhali <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/21 12:12:22 by pmouhali          #+#    #+#             */
-/*   Updated: 2019/11/26 12:55:11 by pmouhali         ###   ########.fr       */
+/*   Updated: 2019/11/26 13:58:50 by pmouhali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ typedef void	(*t_format_set_function)(t_format **fmt, const char *fs, va_list l)
 
 typedef char	*(*t_conversion_function)(va_list l);
 
-typedef char	*(*t_flags_function)(char *str);
+typedef char	*(*t_flag_function)(char *str);
 
 /* ft_printf arch functions */
 int		ft_printf(const char *f, ...);
