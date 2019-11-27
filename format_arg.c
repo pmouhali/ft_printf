@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+#include <stdio.h>
 
 t_conversion_function	g_conversion_functions[] =
 {
@@ -27,7 +28,7 @@ t_conversion_function	g_conversion_functions[] =
 
 t_flag_function		g_flag_functions[] = 
 {
-	&precision
+	&precision, &default_field_width, &fw_zero, &fw_less
 };
 
 int		flag_bmask_values[] =

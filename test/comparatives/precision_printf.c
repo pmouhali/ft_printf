@@ -18,6 +18,20 @@ int		main(void)
 		printf("%.5s\n","");
 		printf("%.6s\n","");
 		printf("%.22s\n","");
+
+		printf("%.*s\n", 0, s);
+		printf("%.*s\n", 6, s);
+		printf("%.*s\n", 2, s);
+		printf("%.*s\n", 1, s);
+		printf("%.*s\n", -1, s);
+		printf("%.*s\n", -10, s);
+		printf("%.*s\n", 0, "");
+		printf("%.*s\n", 6, "");
+		printf("%.*s\n", 2, "");
+		printf("%.*s\n", 1, "");
+		printf("%.*s\n", -1, "");
+		printf("%.*s\n", -10, "");
+
 /*		printf("%.s\n", NULL);
 		printf("%.1s\n", NULL);
 		printf("%.2s\n", NULL);
@@ -39,6 +53,17 @@ int		main(void)
 		printf("[.7] %.7d\n", 91329);
 
 		printf("i conversion\n");
+		printf("%.*i\n", 5, -91329);
+		printf("%.*i\n", 6, -91329);
+		printf("%.*i\n", 7, -91329);
+		printf("%.*i\n", 0, -1);
+		printf("%.*i\n", -1, 0);
+		printf("%.*i\n", 0, 0);
+		printf("%.*i\n", -1, 1);
+		printf("%.*i\n", 100, 91329);
+		printf("%.*i\n", -100, 91329);
+		printf("%.*i\n", -42, 91329);
+
 		printf("%.5i\n", -91329);
 		printf("%.6i\n", -91329);
 		printf("%.7i\n", -91329);
@@ -60,6 +85,17 @@ int		main(void)
 		printf("%.4u\n", 132);
 		printf("%.5u\n", 1329);
 		printf("%.6u\n", 91329);
+
+		printf("%.*u\n", 11, UINT_MAX);
+		printf("%.*u\n", 10, INT_MAX);
+		printf("%.*u\n", 0, 0);
+		printf("%.*u\n", 1, 1);
+		printf("%.*u\n", 2, 9);
+		printf("%.*u\n", 2 ,10);
+		printf("%.*u\n", 4, 132);
+		printf("%.*u\n", 5, 1329);
+		printf("%.*u\n", 6, 91329);
+
 		printf("x conversion\n");
 		printf("%.11x\n", UINT_MAX);
 		printf("%.10x\n", INT_MAX);
@@ -78,4 +114,5 @@ int		main(void)
 		printf("%.3X\n", 10);
 		printf("%.4X\n", 1234);
 		printf("%.20X\n", 12345678);
+
 }

@@ -16,10 +16,8 @@ void	fset_field_width(t_format **format, const char *fs, va_list l)
 {
 	if ((*format)->field_width != DEFAULT_FIELD_WIDTH_VALUE)
 		return ;
-	if ((*format)->precision != DEFAULT_PRECISION_VALUE)
+	if ((*format)->flags & F_PRECISION)
 		return ;
-	if ((*format)->flags & F_ZERO || (*format)->flags & F_LESS)
-		 (*format)->flags += F_FIELD_WIDTH;
 	if (fs[0] == '*')
 	{
 		(*format)->field_width = va_arg(l, int);
@@ -33,4 +31,6 @@ void	fset_field_width(t_format **format, const char *fs, va_list l)
 		(*format)->field_width = ft_atoi(&fs[0]);
 	else
 		(*format)->field_width = 0;
+	if (((*format)->flags & F_ZERO) == 0 && ((*format)->flags & F_LESS) == 0)
+		 (*format)->flags += F_FIELD_WIDTH;
 }

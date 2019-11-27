@@ -23,7 +23,7 @@
 # define CONVERTERS "sdiuxXcp%"
 # define FLAGS "0-.*"
 
-# define FLAG_NUMBER 1
+# define FLAG_NUMBER 4
 # define F_PRECISION 1
 # define F_FIELD_WIDTH 2
 # define F_ZERO 4
@@ -66,6 +66,7 @@ char	*ft_utoa(unsigned int n);
 char	*ft_dec_to_hex(unsigned int n, char *hex_charset);
 char    *ft_get_address(long int n);
 void    *ft_memset(void *s, int c, size_t n);
+char	*field_width(int c, char *s, t_format format, int right_side);
 
 /* format set functions */
 void    fset_init(t_format **format, const char *fs, va_list l);
@@ -87,5 +88,8 @@ char	*w_char37_conv(va_list l);
 
 /* flag functions */
 char	*precision(int c, char *s, t_format format);
+char	*default_field_width(int c, char *s, t_format format);
+char	*fw_zero(int c, char *s, t_format format);
+char	*fw_less(int c, char *s, t_format format);
 
 #endif

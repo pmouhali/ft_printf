@@ -21,7 +21,7 @@ void    fset_precision(t_format **format, const char *fs, va_list l)
 	{
 		(*format)->precision = va_arg(l, int);
 		if ((*format)->precision < 0)
-			(*format)->precision = 0;
+			(*format)->precision = DEFAULT_PRECISION_VALUE;
 	}
 	else if (fs[1] && ft_isdigit(fs[1]))
 		(*format)->precision = ft_atoi(&fs[1]);

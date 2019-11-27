@@ -21,6 +21,9 @@ SRCS = 		ft_printf.c \
 		w_xl_conv.c \
 		w_xu_conv.c \
 		precision.c \
+		default_field_width.c \
+		fw_zero.c \
+		fw_less.c \
 		super_putstr.c \
 		ft_atoi.c \
 		ft_itoa.c \
@@ -34,13 +37,14 @@ SRCS = 		ft_printf.c \
 		ft_strndup.c \
 		ft_strjoin.c \
 		ft_memset.c \
+		field_width.c \
 		
 HEADER = ft_printf.h
 
 OBJS = $(SRCS:.c=.o)
 
-$(NAME): $(SRCS) $(OBJS) $(HEADER)
-		gcc $(FLAGS) -c $(SRCS) -I./ $(HEADER)
+$(NAME):
+		gcc $(FLAGS) -c $(HEADER) $(SRCS)
 		ar rc $(NAME) $(OBJS)
 		ranlib $(NAME)
 
