@@ -21,6 +21,7 @@ void	fset_init(t_format **format, const char *fs, va_list l)
 	(*format)->flags = 0;
 	(*format)->precision = DEFAULT_PRECISION_VALUE;	
 	(*format)->field_width = DEFAULT_FIELD_WIDTH_VALUE;	
+	(*format)->c_conv_zero = 0;	
 }
 
 /*

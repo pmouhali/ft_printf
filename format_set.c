@@ -6,13 +6,11 @@
 /*   By: pmouhali <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/22 17:45:09 by pmouhali          #+#    #+#             */
-/*   Updated: 2019/11/23 15:41:16 by pmouhali         ###   ########.fr       */
+/*   Updated: 2019/11/29 13:10:32 by pmouhali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-
-// TO VERIFIY : What does va_arg returns if there is no arg left ? (see assignation in fset_field_width)
 
 t_format_set_function g_format_set_functions[5] = 
 {

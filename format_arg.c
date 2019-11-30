@@ -36,18 +36,20 @@ int		flag_bmask_values[] =
 	F_PRECISION, F_FIELD_WIDTH, F_ZERO, F_LESS
 };
 
-char	*format_arg(int c, va_list l, t_format format)
+char	*format_arg(int c, va_list l, t_format *format)
 {
 	char *s;
 	int i;
 	
 	s = NULL;
 	s = g_conversion_functions[c](l);
+	if (c == 6 && s[0] == 0)
+		format->c_conv_zero = 1;
 	i = 0;
 	while (i < FLAG_NUMBER)
 	{
-		if (format.flags & flag_bmask_values[i])
-			s = g_flag_functions[i](c, s, format);
+		if (format->flags & flag_bmask_values[i])
+			s = g_flag_functions[i](c, s, *format);
 		i++;
 	}
 	return (s);
