@@ -18,4 +18,8 @@ int		main(void)
 		ft_printf("fp %p\n", h);
 		printf("p  %p\n", NULL);
 		ft_printf("fp %p\n", NULL);
+
+		printf("p  %23p\n", NULL);
+		ft_printf("fp %23p\n", NULL);
+
 }
