@@ -6,7 +6,7 @@
 /*   By: pmouhali <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/02 11:42:14 by pmouhali          #+#    #+#             */
-/*   Updated: 2019/12/02 11:42:16 by pmouhali         ###   ########.fr       */
+/*   Updated: 2019/12/02 14:27:09 by pmouhali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,9 +30,9 @@ int		super_putstr(char *s, int n, int free_s, t_format *format)
 		else
 			write(1, s, (len = 1));
 		format->c_conv_zero = 0;
-		return (len);
 	}
-	write(1, s, (len = n < 0 ? ft_strlen(s) : n));
+	else
+		write(1, s, (len = n < 0 ? ft_strlen(s) : n));
 	if (free_s)
 		free(s);
 	return (len);
