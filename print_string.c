@@ -6,18 +6,18 @@
 /*   By: pmouhali <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/21 12:14:05 by pmouhali          #+#    #+#             */
-/*   Updated: 2019/11/29 14:58:35 by pmouhali         ###   ########.fr       */
+/*   Updated: 2019/12/02 11:51:13 by pmouhali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-#include <stdio.h>
+
 void		print_string(const char *f, va_list l, unsigned int *n)
 {
-	int i;
-	int j;
-	int x;
-	t_format fmt;
+	int			i;
+	int			j;
+	int			x;
+	t_format	fmt;
 
 	i = 0;
 	j = 0;

@@ -6,7 +6,7 @@
 /*   By: pmouhali <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/26 12:11:51 by pmouhali          #+#    #+#             */
-/*   Updated: 2019/11/29 12:22:10 by pmouhali         ###   ########.fr       */
+/*   Updated: 2019/12/02 11:42:01 by pmouhali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 int	ft_printf(const char *f, ...)
 {
-	va_list l;
-	unsigned int n;
+	va_list			l;
+	unsigned int	n;
 
 	va_start(l, f);
 	n = 0;

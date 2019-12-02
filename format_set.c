@@ -6,21 +6,21 @@
 /*   By: pmouhali <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/22 17:45:09 by pmouhali          #+#    #+#             */
-/*   Updated: 2019/11/29 13:10:32 by pmouhali         ###   ########.fr       */
+/*   Updated: 2019/12/02 11:53:09 by pmouhali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-t_format_set_function g_format_set_functions[5] = 
+t_format_set_function g_format_set_functions[5] =
 {
 	&fset_zero, &fset_less, &fset_precision, &fset_field_width, &fset_init
 };
 
 int	format_set(const char *f, va_list l, t_format *fmt)
 {
-	unsigned int i;
-	int index;
+	unsigned int	i;
+	int				index;
 
 	i = 1;
 	g_format_set_functions[4](&fmt, f, l);
@@ -35,4 +35,4 @@ int	format_set(const char *f, va_list l, t_format *fmt)
 		i++;
 	}
 	return (i);
-} 
+}

@@ -1,36 +1,48 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_get_address.c                                   :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: pmouhali <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/12/01 21:41:55 by pmouhali          #+#    #+#             */
+/*   Updated: 2019/12/01 21:43:39 by pmouhali         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft_printf.h"
 
-static long int     dtx_len(long int nb)
+static long int	dtx_len(long int nb)
 {
 	long int div;
 
 	div = nb / 16;
 	if (nb / 16 > 0)
-		return(dtx_len(div) + 1);
+		return (dtx_len(div) + 1);
 	return (1);
 }
 
-static void    dtx_fill(long int nb, char *s, int index, char *hex_charset)
+static void		dtx_fill(long int nb, char *s, int index, char *hex_charset)
 {
 	long int div;
 
 	div = nb / 16;
 	if (nb / 16 > 0)
-	dtx_fill(div, s, index - 1, hex_charset);
+		dtx_fill(div, s, index - 1, hex_charset);
 	s[index] = hex_charset[nb % 16];
 }
 
-char    *ft_get_address(long int n)
+char			*ft_get_address(long int n)
 {
-    char *s;
-    long int len;
+	char		*s;
+	long int	len;
 
-    len = dtx_len(n);
-    if ((s = (char*)malloc(sizeof(char) * (len + 3))) == NULL)
-    return (NULL);
-    s[0] = '0';
-    s[1] = 'x';
-    s[len + 2] = '\0';
-    dtx_fill(n, s, len + 1, "0123456789abcdef");
-    return (s);
+	len = dtx_len(n);
+	if ((s = (char*)malloc(sizeof(char) * (len + 3))) == NULL)
+		return (NULL);
+	s[0] = '0';
+	s[1] = 'x';
+	s[len + 2] = '\0';
+	dtx_fill(n, s, len + 1, "0123456789abcdef");
+	return (s);
 }

@@ -6,7 +6,7 @@
 /*   By: pmouhali <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/23 14:51:09 by pmouhali          #+#    #+#             */
-/*   Updated: 2019/11/23 15:45:39 by pmouhali         ###   ########.fr       */
+/*   Updated: 2019/12/02 11:46:18 by pmouhali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	fset_field_width(t_format **format, const char *fs, va_list l)
 		if ((*format)->field_width < 0)
 		{
 			(*format)->field_width = (*format)->field_width * -1;
-			fset_less(format, fs, l);	
+			fset_less(format, fs, l);
 		}
 	}
 	else if (ft_isdigit(fs[0]))
@@ -32,5 +32,5 @@ void	fset_field_width(t_format **format, const char *fs, va_list l)
 	else
 		(*format)->field_width = 0;
 	if (((*format)->flags & F_ZERO) == 0 && ((*format)->flags & F_LESS) == 0)
-		 (*format)->flags += F_FIELD_WIDTH;
+		(*format)->flags += F_FIELD_WIDTH;
 }

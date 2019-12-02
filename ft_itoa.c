@@ -1,42 +1,54 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: pmouhali <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/12/01 21:45:10 by pmouhali          #+#    #+#             */
+/*   Updated: 2019/12/01 21:45:47 by pmouhali         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft_printf.h"
 
-int	ft_itoa_chrcnt(int n)
+int		ft_itoa_chrcnt(int n)
 {
-		int a;
+	int a;
 
-		if (n == 0)
-				return (1);
-		a = n < 0 ? 1 : 0;
-		while (n != 0)
-		{
-				a += 1;
-				n = n / 10;
-		}
-		return (a);
+	if (n == 0)
+		return (1);
+	a = n < 0 ? 1 : 0;
+	while (n != 0)
+	{
+		a += 1;
+		n = n / 10;
+	}
+	return (a);
 }
 
-char		*ft_itoa(int n)
+char	*ft_itoa(int n)
 {
-		char*toa;
-		int	i;
-		int	m;
+	char*toa;
+	int	i;
+	int	m;
 
-		i = ft_itoa_chrcnt(n);
-		m = 1;
-		if ((toa = (char*)malloc(sizeof(char) * (i + 1))) == NULL)
-				return (NULL);
-		if (n < 0)
-		{
-				toa[0] = '-';
-				m = -1;
-		}
-		if (n == 0)
-				toa[0] = '0';
-		toa[i] = '\0';
-		while (n != 0)
-		{
-				toa[--i] = ((n % 10) * m) + 48;
-				n = n / 10;
-		}
-		return (toa);
+	i = ft_itoa_chrcnt(n);
+	m = 1;
+	if ((toa = (char*)malloc(sizeof(char) * (i + 1))) == NULL)
+		return (NULL);
+	if (n < 0)
+	{
+		toa[0] = '-';
+		m = -1;
+	}
+	if (n == 0)
+		toa[0] = '0';
+	toa[i] = '\0';
+	while (n != 0)
+	{
+		toa[--i] = ((n % 10) * m) + 48;
+		n = n / 10;
+	}
+	return (toa);
 }

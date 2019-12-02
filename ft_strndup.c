@@ -6,7 +6,7 @@
 /*   By: pmouhali <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/04 15:02:19 by pmouhali          #+#    #+#             */
-/*   Updated: 2019/11/26 12:15:15 by pmouhali         ###   ########.fr       */
+/*   Updated: 2019/12/01 21:33:12 by pmouhali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 char	*ft_strndup(const char *s, unsigned int n)
 {
 	unsigned int		i;
-	char	*new;
-	
+	char				*new;
+
 	if (!s)
 		return (NULL);
 	i = 0;

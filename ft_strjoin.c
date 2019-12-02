@@ -6,7 +6,7 @@
 /*   By: pmouhali <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/04 15:03:04 by pmouhali          #+#    #+#             */
-/*   Updated: 2019/11/21 13:37:46 by pmouhali         ###   ########.fr       */
+/*   Updated: 2019/12/01 21:34:05 by pmouhali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 char	*ft_strjoin(char *s1, char *s2)
 {
 	char	*new;
-	int	size;
-	int i;
+	int		size;
+	int		i;
 
 	if (!s1 && !s2)
 		return (NULL);

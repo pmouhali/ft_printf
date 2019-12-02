@@ -6,7 +6,7 @@
 /*   By: pmouhali <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/26 14:39:00 by pmouhali          #+#    #+#             */
-/*   Updated: 2019/11/26 15:22:03 by pmouhali         ###   ########.fr       */
+/*   Updated: 2019/12/01 21:49:23 by pmouhali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,18 +24,16 @@ static char	*s_precision(char *s, int p)
 
 static char	*n_precision(char *s, int p, int s_len)
 {
-	char *new;
-	char *abs;
-	int abs_len;
-	int n;
-	
+	char	*new;
+	char	*abs;
+	int		abs_len;
+	int		n;
+
 	abs_len = s[0] == '-' ? s_len - 1 : s_len;
 	if (abs_len >= p)
 		return (s);
-
 	n = abs_len == s_len ? 0 : 1;
 	abs = ft_strdup(&s[n]);
-
 	n = n == 0 ? p - abs_len : (p - abs_len) + 1;
 	if ((new = (char*)malloc(sizeof(char) * (n + 1))) == NULL)
 		return (s);
@@ -49,11 +47,11 @@ static char	*n_precision(char *s, int p, int s_len)
 	return (new);
 }
 
-char	*precision(int c, char *s, t_format format)
+char		*precision(int c, char *s, t_format format)
 {
 	char	*new;
-	int len;
-	int p;
+	int		len;
+	int		p;
 
 	p = format.precision;
 	if (p == DEFAULT_PRECISION_VALUE)
@@ -65,7 +63,7 @@ char	*precision(int c, char *s, t_format format)
 	{
 		new = ft_strdup("");
 		free(s);
-	}	
+	}
 	else if (c != 0)
 		new = n_precision(s, p, len);
 	else
