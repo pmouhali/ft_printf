@@ -6,7 +6,7 @@ rm -f ft_printf_result.txt
 touch printf_result.txt
 touch ft_printf_result.txt
 
-gcc -g -I./../../../ft_printf1/ -L./../../../ft_printf1/ main_ft_printf.c -lftprintf -Wall -Wextra -Werror -o main_ft_printf
+gcc -g -I./../../ft_printf/ -L./../../ft_printf/ main_ft_printf.c -lftprintf -Wall -Wextra -Werror -o main_ft_printf
 
 gcc main_printf.c -o main_printf
 
